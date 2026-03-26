@@ -3,15 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>add new patient</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/design.css}">
 </head>
 <body>
-    <div class="container">
-        <form th:action="@{/patient/add}" th:object="${patient}" method="post">
-            <input type="text" th:field="*{name}" class="form-control" placeholder="patient name">
-            birth date <input type="date" th:field="*{birth}" class="form-control">
-            <input type="submit" class="form-control" value="Save">
-        </form>
-    </div>
+<div class="container">
+    <h2>Add new patient</h2>
+    <form th:action="@{/add}" th:object="${Patient}" method="post">
+        <div class="form-group">
+            <label>Social Security Number</label>
+            <input type="text" th:field="*{svnr}" class="form-control" placeholder="use a maximum of 10 characters">
+        </div>
+        <div class="form-group">
+            <label>Firstname</label>
+            <input type="text" th:field="*{firstname}" class="form-control" placeholder="e.g. Max">
+        </div>
+        <div class="form-group">
+            <label>Lastname</label>
+            <input type="text" th:field="*{lastname}" class="form-control" placeholder="e.g. Mustermann">
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            <select th:field="*{gender}" class="form-control">
+                <option value="">please select an option</option>
+                <option value="MALE">male</option>
+                <option value="FEMALE">female</option>
+                <option value="DIVERSE">diverse</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Birth</label>
+            <input type="date" th:field="*{birth}" class="form-control">
+        </div>
+        <div class="form-actions">
+            <a href="/patient/list" class="btn btn-primary">Add new patient</a>
+            <a href="/patient/add" class="btn btn-primary">go back</a>
+        </div>
+    </form>
+</div>
 </body>
 </html>

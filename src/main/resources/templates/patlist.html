@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Patients List</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/design.css}">
 </head>
 <body>
 <div class="container">
     <table class="table">
         <thead>
             <tr>
-                <th>name</th>
+                <th>Social Security Number</th>
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>gender</th>
                 <th>birth</th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="p : ${patients}">
-                <td th:text="${p.name}"></td>
+                <td th:text="${p.svnr}"></td>
+                <td th:text="${p.firstname}"></td>
+                <td th:text="${p.lastname}"></td>
+                <td th:text="${p.gender}"></td>
                 <td th:text="${p.birth}"></td>
             </tr>
         </tbody>
@@ -24,7 +30,8 @@
     </table>
 
     <p>
-        <a href="/patient/add">new patient</a>
+        <a href="/patient/add" class="btn btn-primary">Add new patient</a>
+
     </p>
 </div>
 </body>

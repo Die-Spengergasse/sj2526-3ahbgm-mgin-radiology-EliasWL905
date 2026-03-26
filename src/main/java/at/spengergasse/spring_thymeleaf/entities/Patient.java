@@ -13,16 +13,11 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String name;
+    private int svnr;
+    private String firstname;
+    private String lastname;
+    private String gender;
     private LocalDate birth;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public LocalDate getBirth() {
         return birth;
@@ -31,4 +26,40 @@ public class Patient {
     public void setBirth(LocalDate birth) {
         this.birth = birth;
     }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public int getSvnr() {
+        return svnr;
+    }
+
+    public void setSvnr(int svnr) {
+        this.svnr = svnr;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+
+
+
 }

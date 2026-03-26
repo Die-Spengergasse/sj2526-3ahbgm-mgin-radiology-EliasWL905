@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Greeting</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/design.css}">
 </head>
 <body>
 <div class="container">
-    <h1>Hallo</h1>
+    <h1>Willkommen zum Radiologie Untersuchungsgeräte Reservierungssystem</h1>
     Datum: <span th:text="${today}"></span>
     <div>
         <a href="/patient/list">patient list</a>

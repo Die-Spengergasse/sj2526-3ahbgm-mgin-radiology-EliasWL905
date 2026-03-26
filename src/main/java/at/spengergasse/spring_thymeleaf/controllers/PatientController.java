@@ -27,14 +27,14 @@ public class PatientController {
     }
 
     @GetMapping("/add")
-    public String addPatient(Model model) {
-        model.addAttribute("patient", new Patient());
+    public String showForm(Model model) {
+        model.addAttribute("Patient", new Patient());
         return "add_patient";
     }
 
     @PostMapping("/add")
-    public String addPatient(@ModelAttribute("patient") Patient patient) {
+    public String savePatient(@ModelAttribute Patient patient) {
         patientRepository.save(patient);
-        return  "redirect:/patient/list";
+        return "redirect:patlist";
     }
 }

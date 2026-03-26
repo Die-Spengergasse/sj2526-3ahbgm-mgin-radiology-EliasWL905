@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f7fa;
+    color: #2d3748;
+    min-height: 100vh;
+}
+
+
+.navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 0 2rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.navbar-brand {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d3748;
+    text-decoration: none;
+}
+
+.navbar-brand .brand-accent { color: #4f7ef7; }
+
+.navbar-links { list-style: none; display: flex; gap: 0.25rem; }
+
+.navbar-links a {
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #718096;
+    text-decoration: none;
+    transition: all 0.15s;
+}
+
+.navbar-links a:hover { background: #f0f4ff; color: #4f7ef7; }
+.navbar-links a.active { background: #ebf0ff; color: #4f7ef7; }
+
+
+.page-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 2rem 2rem 1.75rem;
+}
+
+.page-header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #4f7ef7;
+    display: block;
+    margin-bottom: 0.35rem;
+}
+
+.page-header h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.page-header p {
+    font-size: 0.9rem;
+    color: #718096;
+    margin-top: 0.3rem;
+}
+
+/* CONTAINER */
+.container { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem; }
+
+/* INFO CARDS */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.info-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    transition: box-shadow 0.15s;
+}
+
+.info-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.07); }
+.info-card.accent-card { border-left: 3px solid #4f7ef7; }
+
+.info-card .card-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #a0aec0;
+    margin-bottom: 0.4rem;
+}
+
+.info-card .card-value { font-size: 1.5rem; font-weight: 600; color: #1a202c; }
+.info-card .card-sub { font-size: 0.8rem; color: #a0aec0; margin-top: 0.25rem; }
+
+
+.action-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.action-bar-title { font-size: 0.95rem; font-weight: 600; color: #2d3748; }
+.btn-group { display: flex; gap: 0.5rem; }
+
+
+.table-wrapper {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table { width: 100%; border-collapse: collapse; }
+
+thead { background: #f8fafc; }
+
+thead th {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #a0aec0;
+    padding: 0.85rem 1.25rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+tbody tr { border-bottom: 1px solid #f0f4f8; transition: background 0.12s; }
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: #f8fafc; }
+
+tbody td { padding: 0.9rem 1.25rem; font-size: 0.9rem; color: #4a5568; }
+tbody td:first-child { font-weight: 500; color: #2d3748; }
+
+.badge-year {
+    background: #ebf0ff;
+    color: #4f7ef7;
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.color-dot { display: inline-flex; align-items: center; gap: 0.45rem; }
+.color-dot::before {
+    content: '';
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #cbd5e0;
+    display: inline-block;
+}
+
+
+.form-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 520px;
+}
+
+.form-group { margin-bottom: 1.25rem; }
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #4a5568;
+    margin-bottom: 0.4rem;
+}
+
+.form-group input {
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    border-radius: 7px;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    color: #2d3748;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.form-group input::placeholder { color: #cbd5e0; }
+
+.form-group input:focus {
+    border-color: #4f7ef7;
+    box-shadow: 0 0 0 3px rgba(79, 126, 247, 0.12);
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'ui-sans-serif', "Arial Black";
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.5rem 1.1rem;
+    border-radius: 7px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: skyblue;
+    transition: all 0.15s;
+    white-space: nowrap;
+}
+
+.btn-primary { background: #4f7ef7; color: #4a5568; border-color: #2d3748; }
+.btn-primary:hover { background: #3a6ce8; border-color: #2d3748; color: #ffffff; }
+
+.btn-ghost { background: #fff; color: #4a5568; border-color: #e2e8f0; }
+.btn-ghost:hover { background: #f8fafc; color: #2d3748; border-color: #cbd5e0; }
+
+.btn-danger { background: #fff; color: #e53e3e; border-color: #fed7d7; }
+.btn-danger:hover { background: #fff5f5; border-color: #e53e3e; color: #e53e3e; }
+
+.empty-state { padding: 3rem; text-align: center; color: #a0aec0; }
+.empty-state .empty-title { font-weight: 600; font-size: 1rem; color: #718096; margin-bottom: 0.25rem; }
+
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.78rem;
+    color: #a0aec0;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 2rem;
+}
+
+@media (max-width: 640px) {
+    .navbar { padding: 0 1rem; }
+    .container { padding: 1.25rem 1rem; }
+    .page-header { padding: 1.5rem 1rem; }
+    .navbar-links a { padding: 0.4rem 0.6rem; font-size: 0.82rem; }
+}
