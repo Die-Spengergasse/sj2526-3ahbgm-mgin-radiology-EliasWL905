@@ -8,7 +8,7 @@
 <body>
 <div class="container">
     <h2>Add new patient</h2>
-    <form th:action="@{/add}" th:object="${Patient}" method="post">
+    <form th:action="@{/patient/add}" th:object="${Patient}" method="post">
         <div class="form-group">
             <label>Social Security Number</label>
             <input type="text" th:field="*{svnr}" class="form-control" placeholder="use a maximum of 10 characters">
@@ -35,8 +35,8 @@
             <input type="date" th:field="*{birth}" class="form-control">
         </div>
         <div class="form-actions">
-            <a href="/patient/list" class="btn btn-primary">Add new patient</a>
-            <a href="/patient/add" class="btn btn-primary">go back</a>
+            <button type="submit" class="btn btn-primary">Add new patient</button>
+            <a th:href="@{/}" class="btn btn-primary">Home</a>
         </div>
     </form>
 </div>

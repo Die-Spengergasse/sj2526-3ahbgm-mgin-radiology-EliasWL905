@@ -7,11 +7,20 @@
 </head>
 <body>
 <div class="container">
-    <h1>Willkommen zum Radiologie Untersuchungsgeräte Reservierungssystem</h1>
+    <h1>Radiologie Untersuchungsgeräte Reservierungssystem</h1>
     Datum: <span th:text="${today}"></span>
-    <div>
-        <a href="/patient/list">patient list</a>
-    </div>
+
+    <footer class="seiten-footer">
+        <div class="footer-content">
+
+            <div class="footer-links">
+                <a th:href="@{/patient/list}" class="btn btn-primary">Patient List</a>
+                <a th:href="@{/device/list}" class="btn btn-primary">Devices</a>
+                <a th:href="@{/patient/add}" class="btn btn-primary">Add Patient</a>
+                <a th:href="@{/reservation/add}" class="btn btn-primary">Add Reservation</a>
+            </div>
+        </div>
+    </footer>
 </div>
 </body>
 </html>

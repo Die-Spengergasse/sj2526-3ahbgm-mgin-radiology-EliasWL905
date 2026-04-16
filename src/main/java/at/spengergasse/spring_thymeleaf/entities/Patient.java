@@ -19,6 +19,10 @@ public class Patient {
     private String gender;
     private LocalDate birth;
 
+    public int getId() {
+        return id;
+    }
+
     public LocalDate getBirth() {
         return birth;
     }

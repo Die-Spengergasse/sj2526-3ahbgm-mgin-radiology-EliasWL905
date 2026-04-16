@@ -237,14 +237,7 @@ tbody td:first-child { font-weight: 500; color: #2d3748; }
 .empty-state .empty-title { font-weight: 600; font-size: 1rem; color: #718096; margin-bottom: 0.25rem; }
 
 
-footer {
-    text-align: center;
-    padding: 1.5rem;
-    font-size: 0.78rem;
-    color: #a0aec0;
-    border-top: 1px solid #e2e8f0;
-    margin-top: 2rem;
-}
+
 
 @media (max-width: 640px) {
     .navbar { padding: 0 1rem; }

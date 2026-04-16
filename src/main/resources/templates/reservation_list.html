@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservations for Device</title>
+    <link rel="stylesheet" th:href="@{/design.css}">
+</head>
+<body>
+<div class="container">
+    <h2>Reservations for <span th:text="${device.name}"></span></h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Patient</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Body Part</th>
+                <th>Comment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="r : ${reservations}">
+                <td th:text="${r.patient.firstname + ' ' + r.patient.lastname}"></td>
+                <td th:text="${#temporals.format(r.startTime, 'dd.MM.yyyy HH:mm')}"></td>
+                <td th:text="${#temporals.format(r.endTime, 'dd.MM.yyyy HH:mm')}"></td>
+                <td th:text="${r.bodyPart}"></td>
+                <td th:text="${r.comment}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        <a th:href="@{/device/list}" class="btn btn-primary">Back to Devices</a>
+        <a th:href="@{/}" class="btn btn-primary">Home</a>
+    </p>
+</div>
+</body>
+</html>

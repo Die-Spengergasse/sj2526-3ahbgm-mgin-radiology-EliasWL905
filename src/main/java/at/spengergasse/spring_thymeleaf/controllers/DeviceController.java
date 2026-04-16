@@ -4,22 +4,20 @@ import at.spengergasse.spring_thymeleaf.entities.DeviceRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HelloController {
+@RequestMapping("/device")
+public class DeviceController {
     private final DeviceRepository deviceRepository;
 
-    public HelloController(DeviceRepository deviceRepository) {
+    public DeviceController(DeviceRepository deviceRepository) {
         this.deviceRepository = deviceRepository;
     }
 
-    @GetMapping("")
-    public String index(Model model) {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        model.addAttribute("today", LocalDate.now().format(dtf));
-        return "index";
+    @GetMapping("/list")
+    public String devices(Model model) {
+        model.addAttribute("devices", deviceRepository.findAll());
+        return "device_list";
     }
 }

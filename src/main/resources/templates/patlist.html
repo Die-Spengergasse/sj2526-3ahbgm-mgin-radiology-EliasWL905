@@ -23,15 +23,15 @@
                 <td th:text="${p.firstname}"></td>
                 <td th:text="${p.lastname}"></td>
                 <td th:text="${p.gender}"></td>
-                <td th:text="${p.birth}"></td>
+                <td th:text="${#temporals.format(p.birth, 'dd.MM.yyyy')}"></td>
             </tr>
         </tbody>
 
     </table>
 
     <p>
-        <a href="/patient/add" class="btn btn-primary">Add new patient</a>
-
+        <a th:href="@{/patient/add}" class="btn btn-primary">Add new patient</a>
+        <a th:href="@{/}" class="btn btn-primary">Home</a>
     </p>
 </div>
 </body>

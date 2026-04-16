@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Devices List</title>
+    <link rel="stylesheet" th:href="@{/design.css}">
+</head>
+<body>
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Location</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="d : ${devices}">
+            <td th:text="${d.name}"></td>
+            <td th:text="${d.type}"></td>
+            <td th:text="${d.location}"></td>
+            <td>
+                <a th:href="@{/reservation/list/{id}(id=${d.id})}" class="btn btn-primary">View Reservations</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <p>
+        <a th:href="@{/reservation/add}" class="btn btn-primary">Add Reservation</a>
+        <a th:href="@{/}" class="btn btn-primary">Home</a>
+    </p>
+</div>
+</body>
+</html>

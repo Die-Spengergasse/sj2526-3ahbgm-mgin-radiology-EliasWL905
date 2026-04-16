@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Reservation</title>
+    <link rel="stylesheet" th:href="@{/design.css}">
+</head>
+<body>
+<div class="container">
+    <h2>Add new reservation</h2>
+
+    <form th:action="@{/reservation/add}" th:object="${reservation}" method="post">
+        <div class="form-group">
+            <label>Patient</label>
+            <select name="patientId" class="form-control" required>
+                <option value="">Select Patient</option>
+                <option th:each="p : ${patients}" th:value="${p.id}" th:text="${p.firstname + ' ' + p.lastname}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Device</label>
+            <select name="deviceId" class="form-control" required>
+                <option value="">Select Device</option>
+                <option th:each="d : ${devices}" th:value="${d.id}" th:text="${d.name + ' (' + d.type + ')'}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Start Time</label>
+            <input type="datetime-local" th:field="*{startTime}" class="form-control" required>
+            <span th:if="${#fields.hasErrors('startTime')}" th:errors="*{startTime}" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label>End Time</label>
+            <input type="datetime-local" th:field="*{endTime}" class="form-control" required>
+            <span th:if="${#fields.hasErrors('endTime')}" th:errors="*{endTime}" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label>Body Part</label>
+            <select th:field="*{bodyPart}" class="form-control" required>
+                <option value="">Select Body Part</option>
+                <option value="HEAD">Head</option>
+                <option value="CHEST">Chest</option>
+                <option value="ABDOMEN">Abdomen</option>
+                <option value="LIMBS">Limbs</option>
+                <option value="SPINE">Spine</option>
+            </select>
+
+        </div>
+        <div class="form-group">
+            <label>Comment</label>
+            <textarea th:field="*{comment}" class="form-control" rows="4"></textarea>
+
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Add Reservation</button>
+            <a th:href="@{/}" class="btn btn-primary">Home</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
