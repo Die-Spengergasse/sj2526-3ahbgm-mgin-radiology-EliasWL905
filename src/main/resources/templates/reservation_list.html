@@ -18,6 +18,7 @@
                 <th>Comment</th>
             </tr>
         </thead>
+        <!-- #temporals.format() wird verwendet, um die Datums- und Uhrzeitangaben in einem benutzerfreundlichen Format anzuzeigen. -->
         <tbody>
             <tr th:each="r : ${reservations}">
                 <td th:text="${r.patient.firstname + ' ' + r.patient.lastname}"></td>

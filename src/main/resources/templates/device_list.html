@@ -21,6 +21,7 @@
             <td th:text="${d.name}"></td>
             <td th:text="${d.type}"></td>
             <td th:text="${d.location}"></td>
+
             <td>
                 <a th:href="@{/reservation/list/{id}(id=${d.id})}" class="btn btn-primary">View Reservations</a>
             </td>

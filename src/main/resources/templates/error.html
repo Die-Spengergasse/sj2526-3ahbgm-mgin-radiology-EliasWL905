@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fehler</title>
+    <link rel="stylesheet" th:href="@{/design.css}">
+</head>
+<body>
+<div class="container">
+    <h2 th:text="${errorTitle}">Fehler</h2>
+    <div class="alert alert-danger">
+        <p th:text="${errorMessage}">Ein Fehler ist aufgetreten.</p>
+        <p th:if="${errorDetail}" style="font-size: 0.85em; color: #888; margin-top: 8px;" th:text="'Details: ' + ${errorDetail}"></p>
+    </div>
+    <div class="form-actions">
+        <a th:href="@{/}" class="btn btn-primary">Zur Startseite</a>
+    </div>
+</div>
+</body>
+</html>
